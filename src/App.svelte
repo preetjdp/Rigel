@@ -1,10 +1,13 @@
 <script lang="ts">
 	export let name: string;
+
+	import Viewer from "./components/Viewer.svelte"
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<!-- <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p> -->
+	<Viewer/>
 </main>
 
 <style>
@@ -13,8 +16,14 @@
 		height: 100%;
 		width: 100%;
 		margin: 0 auto;
-		display: flex;
-		/* OLD CSS */
+		display: grid;
+		grid-template-columns: 1fr 0.8fr;
+		grid-template-rows: 1fr;
+		grid-column-gap: 0px;
+		grid-row-gap: 0px;
+		/**OLD CODE*/
+		/* display: flex; */
+		/* More OLD CSS */
 		/* padding: 1em; */
 		/* max-width: 240px; */
 	}
