@@ -10,9 +10,13 @@
 <style>
 	main {
 		text-align: center;
-		padding: 1em;
-		max-width: 240px;
+		height: 100%;
+		width: 100%;
 		margin: 0 auto;
+		display: flex;
+		/* OLD CSS */
+		/* padding: 1em; */
+		/* max-width: 240px; */
 	}
 
 	h1 {
