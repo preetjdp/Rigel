@@ -7,6 +7,10 @@
     .parent-container {
         width: 80%;
         text-align: center;
+        /* REMOVE THIS */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
     }
 
     .bottom-row {
@@ -17,7 +21,8 @@
 </style>
 
 <div class="parent-container">
-    <Text>Tell us a bit about yourself</Text>
+    <Text size="large">Tell us a bit about yourself</Text>
+    <Text>How are you doing today?</Text>
     <div class="bottom-row">
         <Button type="secondary" disabled>Back</Button>
         <Button type="primary">Proceed</Button>
