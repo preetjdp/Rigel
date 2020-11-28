@@ -1,6 +1,7 @@
 <script lang="ts">
     import Text from "../components/Text.svelte";
     import Button from "../components/Button.svelte";
+    import Dropdown from "../components/Dropdown.svelte";
 </script>
 
 <style>
@@ -25,6 +26,7 @@
     <Text>How are you doing today?</Text>
     <div class="bottom-row">
         <Button type="secondary" disabled>Back</Button>
+        <Dropdown hint="Month" options={["Cheese", "Butter"]}></Dropdown>
         <Button type="primary">Proceed</Button>
     </div>
 </div>
