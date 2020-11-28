@@ -1,6 +1,7 @@
 <script lang="ts">
     export let type: "primary" | "secondary" = "primary";
-    export let disabled: boolean;
+    export let disabled : boolean = false;
+    export let onclick: () => void;
 
     // let color =
     $: buttonProps = {
@@ -33,12 +34,18 @@
 
 <style>
     button {
-        height: 56px;
-        width: 193px;
-        font-size: 32px;
-        border-radius: 4px;
+        height: 37px;
+        width: 136px;
+        font-size: 20px;
+        border-radius: 2.8px;
         font-family: "Arvo";
-        transition: filter 0.5s ease;
+        /* Animations */
+        transition: filter 0.2s ease, background-color 0.1s ease;
+    }
+
+    .btn--diabled {
+        pointer-events: none;
+        filter: opacity(36%);
     }
 
     .btn--hover {
@@ -49,22 +56,28 @@
         filter: drop-shadow(0 4px 16px #00000024);
     }
 
+    /* Primary Button */
+    .btn--primary {
+        background-color: #383838;
+        color: #fbefde;
+    }
+
+    .btn--primary:active {
+        background-color: #505050;
+    }
+
+    /* Secondary Button */
     .btn--secondary {
         background-color: #fbefde;
         color: #383838;
         border: 1px solid #383838;
     }
 
-    .btn--primary {
-        background-color: #383838;
-        color: #fbefde;
-    }
-
-    .btn--diabled {
-        filter: opacity(48%);
-    }
+    .btn--secondary:active {
+        background-color: #E4D9CA;
+    }   
 </style>
 
-<button {...buttonProps}>
+<button on:click={onclick} {...buttonProps}>
     <slot />
 </button>
