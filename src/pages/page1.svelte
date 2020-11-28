@@ -3,10 +3,11 @@
     import Button from "../components/Button.svelte";
     import Dropdown from "../components/Dropdown.svelte";
     import Options from "../components/Options.svelte";
+    import Checkbox from "../components/Checkbox.svelte";
 
     let jobTypes = ["Professional", "Intern", "Freelance", "Volunteer"]
 
-    let selectedValue;
+    let selectedValue: string;
 
     function handleOnChanged(newValue: string) {
         // alert(newValue)
@@ -29,11 +30,22 @@
         align-items: center;
         justify-content: space-around;
     }
+
+    .middle-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
 </style>
 
 <div class="parent-container">
     <Text size="large">Tell us a bit about yourself</Text>
-    <Text>How are you doing today?</Text>
+    <div class="middle-row">
+        <Text>How are you doing today?</Text>
+        <Checkbox>Amazing</Checkbox>
+    </div>
+    
     <Options current={selectedValue} options={jobTypes} onChanged={handleOnChanged}></Options>
     <div class="bottom-row">
         <Button type="secondary" disabled>Back</Button>
