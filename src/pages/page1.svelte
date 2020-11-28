@@ -2,6 +2,16 @@
     import Text from "../components/Text.svelte";
     import Button from "../components/Button.svelte";
     import Dropdown from "../components/Dropdown.svelte";
+    import Options from "../components/Options.svelte";
+
+    let jobTypes = ["Professional", "Intern", "Freelance", "Volunteer"]
+
+    let selectedValue;
+
+    function handleOnChanged(newValue: string) {
+        // alert(newValue)
+        selectedValue = newValue;
+    }
 </script>
 
 <style>
@@ -24,6 +34,7 @@
 <div class="parent-container">
     <Text size="large">Tell us a bit about yourself</Text>
     <Text>How are you doing today?</Text>
+    <Options current={selectedValue} options={jobTypes} onChanged={handleOnChanged}></Options>
     <div class="bottom-row">
         <Button type="secondary" disabled>Back</Button>
         <Dropdown hint="Month" options={["Cheese", "Butter"]}></Dropdown>
