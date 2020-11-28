@@ -4,7 +4,7 @@
 
 <style>
     p {
-        font-size: 56px;
+        font-size: 44px;
         font-family: Arvo;
         font-weight: bold;
     }
