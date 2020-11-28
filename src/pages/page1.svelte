@@ -4,8 +4,9 @@
     import Dropdown from "../components/Dropdown.svelte";
     import Options from "../components/Options.svelte";
     import Checkbox from "../components/Checkbox.svelte";
+    import Textfield from "../components/Textfield.svelte";
 
-    let jobTypes = ["Professional", "Intern", "Freelance", "Volunteer"]
+    let jobTypes = ["Professional", "Intern", "Freelance", "Volunteer"];
 
     let selectedValue: string;
 
@@ -45,11 +46,17 @@
         <Text>How are you doing today?</Text>
         <Checkbox>Amazing</Checkbox>
     </div>
-    
-    <Options current={selectedValue} options={jobTypes} onChanged={handleOnChanged}></Options>
+
+    <Textfield
+        title="What was the name of that super fortunate organization?" required size="large"/>
+
+    <Options
+        current={selectedValue}
+        options={jobTypes}
+        onChanged={handleOnChanged} />
     <div class="bottom-row">
         <Button type="secondary" disabled>Back</Button>
-        <Dropdown hint="Month" options={["Cheese", "Butter"]}></Dropdown>
+        <Dropdown hint="Month" options={['Cheese', 'Butter']} />
         <Button type="primary">Proceed</Button>
     </div>
 </div>
