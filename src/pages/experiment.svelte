@@ -42,10 +42,21 @@
 
 <div class="parent-container">
     <Text size="large">Tell us a bit about yourself</Text>
+    <div class="middle-row">
+        <Text>How are you doing today?</Text>
+        <Checkbox>Amazing</Checkbox>
+    </div>
+
     <Textfield
-        title="What's your Name" required size="large"/>
+        title="What was the name of that super fortunate organization?" required size="large"/>
+
+    <Options
+        current={selectedValue}
+        options={jobTypes}
+        onChanged={handleOnChanged} />
     <div class="bottom-row">
         <Button type="secondary" disabled>Back</Button>
+        <Dropdown hint="Month" options={['Cheese', 'Butter']} />
         <Button type="primary">Proceed</Button>
     </div>
 </div>
