@@ -1,9 +1,5 @@
 <script lang="ts">
-    import { nextPage, previousPage } from "../store";
-
     import Page from "../components/Page.svelte";
-    import Text from "../components/Text.svelte";
-    import Button from "../components/Button.svelte";
 </script>
 
 <style>

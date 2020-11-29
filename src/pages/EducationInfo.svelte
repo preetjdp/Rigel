@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { nextPage, previousPage } from "../store";
+    import { navigate } from "svelte-navigator";
 
     import { months, years } from "../utils/constants";
 
@@ -108,7 +108,16 @@
     </div>
 
     <div class="bottom-row">
-        <Button type="secondary" onclick={previousPage}>Go Back</Button>
-        <Button onclick={nextPage} type="primary">Proceed</Button>
+        <Button
+            type="secondary"
+            onclick={() => navigate('workInfo', { replace: true, state: {} })}>
+            Go Back
+        </Button>
+        <Button
+            onclick={() => navigate('extraInfo', { // replace: true,
+                    state: {} })}
+            type="primary">
+            Proceed
+        </Button>
     </div>
 </Page>

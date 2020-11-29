@@ -26,6 +26,7 @@
   "dependencies": {
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
-    "sirv-cli": "^1.0.8"
+    "sirv-cli": "^1.0.8",
+    "svelte-navigator": "^3.1.3"
   }
 }

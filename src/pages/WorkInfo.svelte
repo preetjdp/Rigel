@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { nextPage, previousPage } from "../store";
+    import { navigate } from "svelte-navigator";
 
     import { months, years } from "../utils/constants";
 
@@ -77,8 +77,14 @@
             <div class="middle-row-child-wrapper">
                 <Text size="default">When did you bid ‘em Adios?</Text>
                 <div class="dropdown-wrapper">
-                    <Dropdown hint={'Month'} options={months} disabled={i_still_work_here}/>
-                    <Dropdown hint={'Year'} options={years} disabled={i_still_work_here}/>
+                    <Dropdown
+                        hint={'Month'}
+                        options={months}
+                        disabled={i_still_work_here} />
+                    <Dropdown
+                        hint={'Year'}
+                        options={years}
+                        disabled={i_still_work_here} />
                 </div>
                 <Checkbox bind:value={i_still_work_here}>
                     I still work there
@@ -93,7 +99,16 @@
     </div>
 
     <div class="bottom-row">
-        <Button type="secondary" onclick={previousPage}>Go Back</Button>
-        <Button onclick={nextPage} type="primary">Proceed</Button>
+        <Button
+            type="secondary"
+            onclick={() => navigate('gotWork', { replace: true, state: {} })}>
+            Go Back
+        </Button>
+        <Button
+            onclick={() => navigate('educationInfo', { // replace: true,
+                    state: {} })}
+            type="primary">
+            Proceed
+        </Button>
     </div>
 </Page>
