@@ -66,6 +66,10 @@
         background-color: #505050;
     }
 
+    .btn--primary:focus {
+        outline: none;
+    }
+
     /* Secondary Button */
     .btn--secondary {
         background-color: #fbefde;
@@ -75,7 +79,11 @@
 
     .btn--secondary:active {
         background-color: #E4D9CA;
-    }   
+    }
+
+    .btn--secondary:focus {
+        outline: none;
+    }
 </style>
 
 <button on:click={onclick} {...buttonProps}>
