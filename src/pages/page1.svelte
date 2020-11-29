@@ -31,19 +31,14 @@
         align-items: center;
         justify-content: space-around;
     }
-
-    .middle-row {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-    }
 </style>
 
 <div class="parent-container">
     <Text size="large">Tell us a bit about yourself</Text>
     <Textfield
         title="What's your Name" required size="large"/>
+        <Textfield
+        title="Tell us about yourself" required size="large" expanding/>
     <div class="bottom-row">
         <Button type="secondary" disabled>Back</Button>
         <Button type="primary">Proceed</Button>

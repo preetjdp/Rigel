@@ -1,14 +1,25 @@
 <script lang="ts">
     import Text from "./Text.svelte";
 
+    import { text_area_resize } from "../utils/autoResizeTextArea";
+
     export let title: string;
     export let hint: string = "Input";
     export let size: "large" | "default" = "default";
     export let required: boolean = false;
 
+    export let expanding: boolean = false;
+
+    let _textFieldValue: string;
+
     $: textfieldProps = {
         ...$$restProps,
-        class: ["text-field", size && `text-field--${size}`, $$restProps.class]
+        class: [
+            "text-field",
+            size && `text-field--${size}`,
+            _textFieldValue && `text-field--active`,
+            $$restProps.class,
+        ]
             .filter(Boolean)
             .join(" "),
     };
@@ -23,6 +34,8 @@
 
         padding-bottom: 1rem;
         border-bottom: 2px solid #999999;
+
+        transition: border-bottom 0.2s ease;
     }
 
     .text-field--default {
@@ -33,6 +46,10 @@
         width: 660px;
     }
 
+    .text-field--active {
+        border-bottom: 2px solid #383838;
+    }
+
     .text-field-input {
         background-color: transparent;
         border: none;
@@ -41,18 +58,22 @@
         color: #383838;
     }
 
-    .text-field-input:focus  {
+    .text-field-input:focus {
         border: none;
         outline: none;
     }
 
-    .text-field-input:active  {
+    .text-field-input:active {
         border: none;
         outline: none;
     }
 
     .text-field-input::placeholder {
         color: #999999;
+    }
+
+    textarea {
+        max-height: 80px;
     }
 </style>
 
@@ -61,5 +82,18 @@
         {title}
         {#if required}*{/if}
     </Text>
-    <input class="text-field-input" placeholder={hint} type="text" />
+    {#if !expanding}
+        <input
+            bind:value={_textFieldValue}
+            class="text-field-input"
+            placeholder={hint}
+            type="text" />
+    {:else}
+        <textarea
+            bind:value={_textFieldValue}
+            class="text-field-input"
+            placeholder={hint}
+            type="text"
+            use:text_area_resize />
+    {/if}
 </div>
