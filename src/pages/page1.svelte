@@ -39,7 +39,7 @@
 
 <div
     in:fly={{ x: -300, duration: 500, delay: 300 }}
-    out:fly={{ x: 300, duration: 300 }}
+    out:fly={{ x: -300, duration: 300 }}
     class="parent-container">
     <Text size="large">Tell us a bit about yourself</Text>
     <Textfield title="What's your Name" required size="large" />

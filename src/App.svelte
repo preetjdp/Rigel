@@ -26,6 +26,9 @@
 		margin: 0 auto;
 		display: flex;
 		justify-content: center;
+
+		/* Disables all overflows, might lead to problems */
+		overflow: hidden;
 		/* grid-template-columns: 1fr 0.8fr;
 		grid-template-rows: 1fr;
 		grid-column-gap: 0px;

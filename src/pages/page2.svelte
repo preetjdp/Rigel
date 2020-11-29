@@ -1,7 +1,7 @@
 <script lang="ts">
     import { previousPage } from "../store";
 
-    import { fade, slide, fly } from 'svelte/transition';
+    import { fade, slide, fly, } from 'svelte/transition';
 
     import Text from "../components/Text.svelte";
     import Button from "../components/Button.svelte";
@@ -37,8 +37,8 @@
     }
 </style>
 
-<div in:fly={{ x: -300, duration: 500, delay: 300 }}
-out:fly={{ x: 300, duration: 300 }} class="parent-container">
+<div in:fly={{ x: 300, duration: 500}}
+out:fly={{ x: 600, duration: 300, opacity:1 }} class="parent-container">
     <Text size="large">Page No 2</Text>
     <!-- <Textfield
         title="What's your Name" required size="large"/>
