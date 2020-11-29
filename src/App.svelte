@@ -1,10 +1,21 @@
 <script lang="ts">
-	export let name: string;
+	import { onDestroy } from "svelte";
+	import { page } from "./store";
 
 	// import Viewer from "./components/Viewer.svelte"
 	// import Text from "./components/Text.svelte"
 
 	import Page1 from "./pages/page1.svelte";
+	import Page2 from "./pages/page2.svelte";
+
+	let page_value = 0;
+
+	const unsubscribe = page.subscribe((value) => {
+		console.log("WOWZA", page_value);
+		page_value = value;
+	});
+
+	onDestroy(unsubscribe);
 </script>
 
 <style>
@@ -26,13 +37,6 @@
 		/* max-width: 240px; */
 	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
 	@media (min-width: 640px) {
 		main {
 			max-width: none;
@@ -47,9 +51,9 @@
 </svelte:head>
 
 <main>
-	<Page1 />
-	<!-- <h1>Hello {name}!</h1> -->
-	<!-- <Text>Hello test</Text> -->
-	<!-- <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p> -->
-	<!-- <Viewer/> -->
+	{#if page_value == 0}
+		<Page1/>
+	{:else}
+		<Page2 />
+	{/if}
 </main>
