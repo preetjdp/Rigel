@@ -1,35 +1,13 @@
 <script lang="ts">
-    import { previousPage } from "../store";
+    import { nextPage, previousPage } from "../store";
 
-    import { fade, slide, fly, } from 'svelte/transition';
-
+    import Page from "../components/Page.svelte";
     import Text from "../components/Text.svelte";
     import Button from "../components/Button.svelte";
-    import Dropdown from "../components/Dropdown.svelte";
-    import Options from "../components/Options.svelte";
-    import Checkbox from "../components/Checkbox.svelte";
     import Textfield from "../components/Textfield.svelte";
-
-    let jobTypes = ["Professional", "Intern", "Freelance", "Volunteer"];
-
-    let selectedValue: string;
-
-    function handleOnChanged(newValue: string) {
-        // alert(newValue)
-        selectedValue = newValue;
-    }
 </script>
 
 <style>
-    .parent-container {
-        width: 80%;
-        text-align: center;
-        /* REMOVE THIS */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-    }
-
     .bottom-row {
         display: flex;
         align-items: center;
@@ -37,15 +15,10 @@
     }
 </style>
 
-<div in:fly={{ x: 300, duration: 500}}
-out:fly={{ x: 600, duration: 300, opacity:1 }} class="parent-container">
-    <Text size="large">Page No 2</Text>
-    <!-- <Textfield
-        title="What's your Name" required size="large"/>
-        <Textfield
-        title="Tell us about yourself" required size="large" expanding/> -->
+<Page>
+    <Text size="large">Page 2</Text>
     <div class="bottom-row">
         <Button onclick={previousPage} type="secondary">Back</Button>
-        <Button type="primary" disabled>Proceed</Button>
+        <Button onclick={nextPage} type="primary" disabled>Proceed</Button>
     </div>
-</div>
+</Page>
