@@ -4,7 +4,6 @@
     import Page from "../components/Page.svelte";
     import Text from "../components/Text.svelte";
     import Button from "../components/Button.svelte";
-    import Textfield from "../components/Textfield.svelte";
 </script>
 
 <style>
