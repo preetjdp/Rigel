@@ -60,6 +60,6 @@
 	{:else if page_value == 4}
 		<ExtraInfo />
 	{:else}
-		<Page2 />
+		<Viewer />
 	{/if}
 </main> -->
