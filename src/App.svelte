@@ -5,9 +5,8 @@
 	// import Viewer from "./components/Viewer.svelte"
 	// import Text from "./components/Text.svelte"
 
-	import Page1 from "./pages/page1.svelte";
+	import PersonalInfo from "./pages/PersonalInfo.svelte";
 	import Page2 from "./pages/page2.svelte";
-
 	let page_value = 0;
 
 	const unsubscribe = page.subscribe((value) => {
@@ -55,7 +54,7 @@
 
 <main>
 	{#if page_value == 0}
-		<Page1/>
+		<PersonalInfo/>
 	{:else}
 		<Page2 />
 	{/if}

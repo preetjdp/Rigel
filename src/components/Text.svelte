@@ -16,6 +16,10 @@
 </script>
 
 <style>
+    p {
+        margin: 1rem 0;
+    }
+    
     .txt {
         font-family: Arvo;
     }
