@@ -12,12 +12,15 @@
         align-items: center;
         justify-content: space-around;
     }
+
+    .viewer {
+        height: 100%;
+        width: 80%;
+        filter: drop-shadow(0 4px 16px #00000008);
+        background-color: whitesmoke;
+    }
 </style>
 
-<Page>
-    <Text size="large">Page 2</Text>
-    <div class="bottom-row">
-        <Button onclick={previousPage} type="secondary">Back</Button>
-        <Button onclick={nextPage} type="primary" disabled>Proceed</Button>
-    </div>
+<Page style="align-items: center;">
+    <div class="viewer" />
 </Page>

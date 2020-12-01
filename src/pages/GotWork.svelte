@@ -20,7 +20,7 @@
     .button-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.2rem;
     }
 </style>
 
@@ -40,7 +40,7 @@
                 class="question-mark"
                 src="assets/sad.svg"
                 alt="Question Mark" />
-            <Button onclick={previousPage} type="secondary">No i don't</Button>
+            <Button onclick={previousPage} type="secondary">No I don't</Button>
         </div>
 
         <div class="button-wrapper">
@@ -48,7 +48,7 @@
                 class="question-mark"
                 src="assets/happy.svg"
                 alt="Question Mark" />
-            <Button onclick={nextPage} type="primary">Yes</Button>
+            <Button onclick={nextPage} type="primary">Yes I do</Button>
         </div>
     </div>
 </Page>

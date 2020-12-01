@@ -17,9 +17,9 @@
 
 <Page type="start">
     <Text size="large">Tell us a bit about yourself</Text>
-    <Textfield title="What would you liike to be called?" required size="large" />
-    <Textfield title="What role do you look yourself into?" required size="large"/>
-    <Textfield title="Mail ID pleaseeeeeeee" required size="large"/>
+    <Textfield title="What would you like to be called?" required size="large" />
+    <!-- <Textfield title="What role do you look yourself into?" required size="large"/> -->
+    <Textfield title="What's your mail ID" required size="large"/>
     <div class="bottom-row">
         <Button type="secondary" disabled>Back</Button>
         <Button onclick={nextPage} type="primary">Proceed</Button>

@@ -16,10 +16,10 @@
 </script>
 
 <style>
-    p {
+    /* p {
         margin: 1rem 0;
-    }
-    
+    } */
+
     .txt {
         font-family: Arvo;
     }
@@ -36,6 +36,8 @@
     }
 </style>
 
-<p {...textProps}>
+<p
+    style={size === 'default' ? 'margin: 0.5rem 0;' : 'margin: 0.8rem 0;'}
+    {...textProps}>
     <slot />
 </p>

@@ -7,6 +7,7 @@
 
 	import PersonalInfo from "./pages/PersonalInfo.svelte";
 	import GotWork from "./pages/GotWork.svelte";
+	import WorkInfo from "./pages/WorkInfo.svelte";
 	import Page2 from "./pages/page2.svelte";
 	let page_value = 0;
 
@@ -58,6 +59,8 @@
 		<PersonalInfo />
 	{:else if page_value == 1}
 		<GotWork />
+	{:else if page_value == 2}
+		<WorkInfo />
 	{:else}
 		<Page2 />
 	{/if}

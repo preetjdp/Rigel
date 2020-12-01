@@ -33,6 +33,6 @@
     }
 </style>
 
-<div in:fly={in_animation} out:fly={out_animation} class="parent-container">
+<div in:fly={in_animation} out:fly={out_animation} class="parent-container" {...$$restProps}>
     <slot />
 </div>

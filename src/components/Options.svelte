@@ -20,16 +20,25 @@
         min-width: 106px;
         height: 28px;
         border: 1px solid #383838;
-        margin: 1rem;
+        /* margin: 1rem; */
+        /* margin: 1rem 1rem 0 0; */
+        margin: 0.2rem 1rem 0.5rem 0;
+        padding: 0 1.2rem;
         border-radius: 2px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
+        outline: none;
+
         transition: filter 0.2s ease,
             background-color 0.2s cubic-bezier(0.165, 0.84, 0.94, 1),
             color 0.1s cubic-bezier(0.165, 0.84, 0.94, 1);
+    }
+
+    .option:hover {
+        filter: drop-shadow(0 4px 16px #00000012);
     }
 
     .option--default {
