@@ -10,14 +10,14 @@
 
     export let expanding: boolean = false;
 
-    let _textFieldValue: string;
+    export let value: string;
 
     $: textfieldProps = {
         ...$$restProps,
         class: [
             "text-field",
             size && `text-field--${size}`,
-            _textFieldValue && `text-field--active`,
+            value && `text-field--active`,
             $$restProps.class,
         ]
             .filter(Boolean)
@@ -84,13 +84,13 @@
     </Text>
     {#if !expanding}
         <input
-            bind:value={_textFieldValue}
+            bind:value={value}
             class="text-field-input"
             placeholder={hint}
             type="text" />
     {:else}
         <textarea
-            bind:value={_textFieldValue}
+            bind:value={value}
             class="text-field-input"
             placeholder={hint}
             type="text"
