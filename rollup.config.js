@@ -40,7 +40,9 @@ export default {
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
-		wasm(),
+		wasm({
+			sync: ["2a6f85fd3336d811.wasm"]
+		}),
 		svelte({
 			preprocess: sveltePreprocess(),
 			compilerOptions: {
