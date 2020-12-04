@@ -1,4 +1,5 @@
 <script>
+    import { fade, } from "svelte/transition";
 </script>
 
 <style>
@@ -7,7 +8,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-shrink: 0;
     }
 </style>
 
-<div class="navbar">Navbar ....</div>
+<!-- TODO Tweak the animation parameters here -->
+<nav in:fade out:fade class="navbar">Navbar ....</nav>

@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { nextPage, information } from "../store";
+    import { information } from "../store";
+    import { navigate } from "svelte-navigator";
 
     import Page from "../components/Page.svelte";
     import Text from "../components/Text.svelte";
@@ -33,6 +34,10 @@
         size="large" />
     <div class="bottom-row">
         <Button type="secondary" disabled>Back</Button>
-        <Button onclick={nextPage} type="primary">Proceed</Button>
+        <Button
+            onclick={() => navigate('gotWork', { state: {} })}
+            type="primary">
+            Proceed
+        </Button>
     </div>
 </Page>

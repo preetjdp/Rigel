@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let type: "start" | "middle" = "middle";
+    export let type: "start" | "middle" | "end" = "middle";
     import { fly, fade, slide } from "svelte/transition";
 
     interface FlyParams {
@@ -13,11 +13,11 @@
         x: type === "start" ? -300 : 300,
         duration: 500,
         // delay: type === "start" ? 300 : 300,
-        delay: 300
+        delay: 300,
     };
 
     const out_animation: FlyParams = {
-        x: type === "start" ? -300 : 600,
+        x: type === "start" ? -300 : type === "middle" ? -300 : 600,
         duration: 300,
     };
 </script>
@@ -38,6 +38,8 @@
     }
 </style>
 
-<div in:fly={in_animation} out:fly={out_animation} class="parent-container" {...$$restProps}>
+<div 
+in:fly={in_animation} out:fly={out_animation}
+ class="parent-container" {...$$restProps}>
     <slot />
 </div>

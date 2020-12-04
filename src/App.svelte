@@ -1,26 +1,7 @@
 <script lang="ts">
-	import { onDestroy } from "svelte";
-	import { page } from "./store";
+	import { Router } from "svelte-navigator";
 
-	// import Viewer from "./components/Viewer.svelte"
-	// import Text from "./components/Text.svelte"
-
-	import Navbar from "./components/Navbar.svelte";
-
-	import PersonalInfo from "./pages/PersonalInfo.svelte";
-	import GotWork from "./pages/GotWork.svelte";
-	import WorkInfo from "./pages/WorkInfo.svelte";
-	import EducationInfo from "./pages/EducationInfo.svelte";
-	import ExtraInfo from "./pages/ExtraInfo.svelte";
-	import Page2 from "./pages/page2.svelte";
-	let page_value = 0;
-
-	const unsubscribe = page.subscribe((value) => {
-		console.log("WOWZA", page_value);
-		page_value = value;
-	});
-
-	onDestroy(unsubscribe);
+	import Wrapper from "./Wrapper.svelte";
 </script>
 
 <style>
@@ -62,7 +43,12 @@
 </svelte:head>
 
 <main>
-	<Navbar />
+	<Router>
+		<Wrapper />
+	</Router>
+</main>
+
+<!-- <main>
 	{#if page_value == 0}
 		<PersonalInfo />
 	{:else if page_value == 1}
@@ -76,4 +62,4 @@
 	{:else}
 		<Page2 />
 	{/if}
-</main>
+</main> -->

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { nextPage, previousPage } from "../store";
+    import { navigate } from "svelte-navigator";
 
     import Page from "../components/Page.svelte";
     import Text from "../components/Text.svelte";
@@ -40,7 +40,14 @@
                 class="question-mark"
                 src="assets/sad.svg"
                 alt="Question Mark" />
-            <Button onclick={previousPage} type="secondary">No I don't</Button>
+            <Button
+                onclick={() => navigate('educationInfo', {
+                        replace: true,
+                        state: {},
+                    })}
+                type="secondary">
+                No I don't
+            </Button>
         </div>
 
         <div class="button-wrapper">
@@ -48,7 +55,11 @@
                 class="question-mark"
                 src="assets/happy.svg"
                 alt="Question Mark" />
-            <Button onclick={nextPage} type="primary">Yes I do</Button>
+            <Button
+                onclick={() => navigate('workInfo', { state: {} })}
+                type="primary">
+                Yes I do
+            </Button>
         </div>
     </div>
 </Page>
