@@ -6,6 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
+import { wasm } from '@rollup/plugin-wasm';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -39,6 +40,9 @@ export default {
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
+		wasm({
+			sync: ["2a6f85fd3336d811.wasm"]
+		}),
 		svelte({
 			preprocess: sveltePreprocess(),
 			compilerOptions: {
