@@ -16,19 +16,20 @@
 </style>
 
 <Page type="start">
-    <Text size="large">Tell us a bit about yourself</Text>
+    <div>
+        <Text size="large">Got any extra information to share?</Text>
+        <Text size="default">
+            Add whatever you want to !. This is your blank canvas
+        </Text>
+    </div>
     <Textfield
         bind:value={$information.personalInfo.name}
-        title="What would you like to be called?"
-        required
-        size="large" />
-    <Textfield
-        title="What role do you look yourself into?"
+        title="Title"
         required
         size="large" />
     <Textfield
         bind:value={$information.personalInfo.email}
-        title="What's your mail ID"
+        title="Description"
         required
         size="large" />
     <div class="bottom-row">

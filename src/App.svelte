@@ -5,9 +5,13 @@
 	// import Viewer from "./components/Viewer.svelte"
 	// import Text from "./components/Text.svelte"
 
+	import Navbar from "./components/Navbar.svelte";
+
 	import PersonalInfo from "./pages/PersonalInfo.svelte";
 	import GotWork from "./pages/GotWork.svelte";
 	import WorkInfo from "./pages/WorkInfo.svelte";
+	import EducationInfo from "./pages/EducationInfo.svelte";
+	import ExtraInfo from "./pages/ExtraInfo.svelte";
 	import Page2 from "./pages/page2.svelte";
 	let page_value = 0;
 
@@ -26,7 +30,10 @@
 		width: 100%;
 		margin: 0 auto;
 		display: flex;
-		justify-content: center;
+		/* justify-content: center; */
+		align-items: center;
+		justify-content: flex-start;
+		flex-direction: column;
 
 		/* Disables all overflows, might lead to problems */
 		overflow: hidden;
@@ -55,12 +62,17 @@
 </svelte:head>
 
 <main>
+	<Navbar />
 	{#if page_value == 0}
 		<PersonalInfo />
 	{:else if page_value == 1}
 		<GotWork />
 	{:else if page_value == 2}
 		<WorkInfo />
+	{:else if page_value == 3}
+		<EducationInfo />
+	{:else if page_value == 4}
+		<ExtraInfo />
 	{:else}
 		<Page2 />
 	{/if}

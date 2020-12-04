@@ -24,12 +24,17 @@
 
 <style>
     .parent-container {
+        flex-grow: 1;
         width: 80%;
         text-align: center;
         /* REMOVE THIS */
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        /* justify-content: space-evenly; */
+
+        /* padding: 1.5rem; */
+        padding: 0 1.5rem 1.5rem;
+        justify-content: space-between;
     }
 </style>
 
