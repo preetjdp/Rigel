@@ -39,14 +39,14 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        gap: 1rem;
+        gap: 2rem;
         justify-self: center;
     }
 
     .middle-row {
         display: flex;
         flex-direction: row;
-        gap: 1rem;
+        gap: 2rem;
         margin-top: 0.2rem;
     }
 
@@ -79,8 +79,8 @@
             <div class="middle-row-child-wrapper">
                 <Text size="default">When did you studying here?</Text>
                 <div class="dropdown-wrapper">
-                    <Dropdown hint={'Month'} />
-                    <Dropdown hint={'Year'} />
+                    <Dropdown hint={'Month'} options={months} />
+                    <Dropdown hint={'Year'} options={years} />
                 </div>
             </div>
             <div class="middle-row-child-wrapper">
@@ -108,15 +108,8 @@
     </div>
 
     <div class="bottom-row">
-        <Button
-            type="secondary"
-            onclick={() => navigate('workInfo', { replace: true, state: {} })}>
-            Go Back
-        </Button>
-        <Button
-            onclick={() => navigate('extraInfo', { // replace: true,
-                    state: {} })}
-            type="primary">
+        <Button type="secondary" onclick={() => navigate(-1)}>Go Back</Button>
+        <Button onclick={() => navigate('extraInfo')} type="primary">
             Proceed
         </Button>
     </div>

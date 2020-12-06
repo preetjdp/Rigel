@@ -13,19 +13,27 @@
         justify-content: space-around;
     }
 
-    .question-mark {
+    .custom-image {
         align-self: center;
+    }
+
+    .question-mark {
+        height: 120px;
     }
 
     .button-wrapper {
         display: flex;
         flex-direction: column;
+        align-self: flex-start;
         gap: 1.2rem;
     }
 </style>
 
 <Page>
-    <img class="question-mark" src="assets/question.svg" alt="Question Mark" />
+    <img
+        class="custom-image question-mark"
+        src="assets/question.svg"
+        alt="Question Mark" />
     <div>
         <Text size="large">Got some work to brag about?</Text>
         <Text size="default">
@@ -37,22 +45,18 @@
     <div class="bottom-row">
         <div class="button-wrapper">
             <img
-                class="question-mark"
+                class="custom-image"
                 src="assets/sad.svg"
                 alt="Question Mark" />
-            <Button
-                onclick={() => navigate('educationInfo', {
-                        replace: true,
-                        state: {},
-                    })}
-                type="secondary">
+            <Button onclick={() => navigate('educationInfo')} type="secondary">
                 No I don't
             </Button>
+            <Button onclick={() => navigate(-1)} type="secondary">Back</Button>
         </div>
 
         <div class="button-wrapper">
             <img
-                class="question-mark"
+                class="custom-image"
                 src="assets/happy.svg"
                 alt="Question Mark" />
             <Button

@@ -34,10 +34,19 @@
         flex-direction: column;
     }
 
+    .upper-middle-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        justify-self: center;
+    }
+
     .middle-row {
         display: flex;
         flex-direction: row;
-        gap: 1rem;
+        gap: 2rem;
         margin-top: 0.2rem;
     }
 
@@ -62,16 +71,20 @@
             onChanged={(a) => {}}
             options={['Professional', 'Intern', 'Freelance', 'Volunteer']}
             current={'Professional'} />
-        <Textfield
-            title="What was the name of that super fortunate organization?"
-            required
-            size="large" />
+        <div class="upper-middle-row">
+            <Textfield title="What was your role ?" required size="default" />
+            <Textfield
+                title="Name of the Organization ?"
+                required
+                size="default" />
+        </div>
+
         <div class="middle-row">
             <div class="middle-row-child-wrapper">
                 <Text size="default">When did you start working?</Text>
                 <div class="dropdown-wrapper">
-                    <Dropdown hint={'Month'} />
-                    <Dropdown hint={'Year'} />
+                    <Dropdown hint={'Month'} options={months} />
+                    <Dropdown hint={'Year'} options={years} />
                 </div>
             </div>
             <div class="middle-row-child-wrapper">
@@ -99,15 +112,8 @@
     </div>
 
     <div class="bottom-row">
-        <Button
-            type="secondary"
-            onclick={() => navigate('gotWork', { replace: true, state: {} })}>
-            Go Back
-        </Button>
-        <Button
-            onclick={() => navigate('educationInfo', { // replace: true,
-                    state: {} })}
-            type="primary">
+        <Button type="secondary" onclick={() => navigate(-1)}>Go Back</Button>
+        <Button onclick={() => navigate('educationInfo')} type="primary">
             Proceed
         </Button>
     </div>

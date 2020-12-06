@@ -34,12 +34,22 @@
 
         /* padding: 1.5rem; */
         padding: 0 1.5rem 1.5rem;
-        justify-content: space-between;
+        /* justify-content: space-between; */
+        justify-content: space-around;
+    }
+
+    /* TODO Not super sure about this */
+    @media (max-width: 640px) {
+        .parent-container {
+            width: 100%;
+        }
     }
 </style>
 
-<div 
-in:fly={in_animation} out:fly={out_animation}
- class="parent-container" {...$$restProps}>
+<div
+    in:fly={in_animation}
+    out:fly={out_animation}
+    class="parent-container"
+    {...$$restProps}>
     <slot />
 </div>
