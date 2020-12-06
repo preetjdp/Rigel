@@ -3,6 +3,8 @@
         "empty";
     export let number: number;
     export let seperator: boolean;
+
+    export let onclick: () => void;
 </script>
 
 <style>
@@ -12,6 +14,8 @@
         flex-direction: row;
         gap: 8px;
         font-weight: bold;
+
+        cursor: pointer;
     }
 
     .navbar-element--circle {
@@ -32,7 +36,7 @@
     }
 </style>
 
-<div class="navbar-element">
+<div on:click={onclick} class="navbar-element">
     <div class="navbar-element--circle">{number}</div>
     <slot />
     {#if seperator}

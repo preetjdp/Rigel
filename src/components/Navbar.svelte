@@ -1,4 +1,8 @@
 <script lang="ts">
+    import { navigate } from "svelte-navigator";
+
+    type navbarElementType = "end" | "endFinal" | "empty" | "active" | "filled";
+
     import { fade } from "svelte/transition";
     import { useLocation } from "svelte-navigator";
 
@@ -20,7 +24,17 @@
     const navbarElements = Object.values(routerToNavbarMap);
     const navbarElementsUnique = [...new Set(navbarElements)];
 
-    console.log($location);
+    const locationToRouteMapper = (e: string) =>
+        Object.keys(routerToNavbarMap).find(
+            (key) => routerToNavbarMap[key] === e
+        );
+
+    const locationToNavbarElementTypeMapper = (
+        location: string,
+        index: number
+    ): navbarElementType => {
+        return "empty";
+    };
 </script>
 
 <style>
@@ -38,7 +52,9 @@
 <nav in:fade out:fade class="navbar">
     {#each navbarElementsUnique as elementName, i}
         <NavbarElement
+            onclick={() => navigate(locationToRouteMapper(elementName))}
             number={i + 1}
+            type={locationToNavbarElementTypeMapper($location.pathname, i)}
             seperator={i !== navbarElementsUnique.length - 1}>
             {elementName}
         </NavbarElement>

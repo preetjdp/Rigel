@@ -26,10 +26,10 @@
         right: 0;
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.5rem;
         justify-content: center;
         align-self: center;
-        padding: 1rem;
+        padding: 0.5rem;
     }
 
     .viewer {
@@ -58,6 +58,7 @@
 <Page style="align-items: center; padding: 0px;">
     <div class="viewer" />
     <div class="options-wrapper">
+        <Button onclick={() => navigate(-1)} type="secondary">Back</Button>
         <Button onclick={download} type="secondary">Download</Button>
         <Button onclick={share} type="secondary">Share</Button>
         <Button onclick={() => navigate('/')} type="secondary">Edit</Button>
