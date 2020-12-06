@@ -17,9 +17,9 @@
     <Navbar />
 {/if}
 <Route path="" component={PersonalInfo} />
-<Route path="personalInfo" component={PersonalInfo} />
+<Route path="personalInfo" meta={{ name: 'About' }} component={PersonalInfo} />
 <Route path="gotWork" component={GotWork} />
-<Route path="workInfo" component={WorkInfo} />
-<Route path="educationInfo" component={EducationInfo} />
-<Route path="extraInfo" component={ExtraInfo} />
-<Route path="viewer" component={Viewer} />
+<Route path="workInfo" meta={{ name: 'Work' }} component={WorkInfo} />
+<Route path="educationInfo" meta={{ name: 'Education' }} component={EducationInfo} />
+<Route path="extraInfo" meta={{ name: 'Extras' }} component={ExtraInfo} />
+<Route path="viewer" meta={{ name: 'Work' }} component={Viewer} />
