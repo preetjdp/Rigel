@@ -7,7 +7,6 @@
     import { useLocation } from "svelte-navigator";
 
     import NavbarElement from "./NavbarElement.svelte";
-    import type { element } from "svelte/internal";
 
     const location = useLocation();
 
