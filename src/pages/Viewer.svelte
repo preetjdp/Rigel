@@ -1,6 +1,7 @@
 <script lang="ts">
     import { derivedInformation } from "../store";
     import { navigate } from "svelte-navigator";
+    import { RegelTheme } from "../utils/pdfTheme";
 
     import Page from "../components/Page.svelte";
     import Button from "../components/Button.svelte";
@@ -15,7 +16,15 @@
     };
 
     const download = async () => {
-        const result = await MarkdownToPdf.convertString($derivedInformation);
+        const result = await MarkdownToPdf.convertString($derivedInformation, {
+            /**
+             * The options are marked options
+             *
+             * Ref -> https://marked.js.org/using_advanced#options
+             */
+            smartypants: true,
+            pdf: RegelTheme,
+        });
 
         const blob = new Blob([result], {
             type: "application/pdf",
