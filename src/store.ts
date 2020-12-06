@@ -25,7 +25,9 @@ interface AllInformation {
 }
 
 export const information = writable<RecursivePartial<AllInformation>>({
-    personalInfo: {}
+    personalInfo: {},
+    extraInfo: {},
+    workInfo: {}
 })
 
 information.subscribe(value => {
