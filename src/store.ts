@@ -14,10 +14,22 @@ interface AllInformation {
         job_type: string
         role: string
         org: string
-        start_working: string
-        end_working: string
+        start_working_month: string
+        start_working_year: string
+        end_working_month: string
+        end_working_year: string
         what_did_you_do_there: string
     }
+    educationInfo: {
+        edu_type: string
+        institute_name: string
+        course_name: string
+        start_studying_month: string
+        start_studying_year: string
+        end_studying_month: string
+        end_studying_year: string
+        what_did_you_do_there: string
+    },
     extraInfo: {
         title: string
         description: string
@@ -26,8 +38,14 @@ interface AllInformation {
 
 export const information = writable<RecursivePartial<AllInformation>>({
     personalInfo: {},
+    workInfo: {
+        job_type: 'Professional'
+    },
+    educationInfo: {
+        edu_type: 'Formal'
+    },
     extraInfo: {},
-    workInfo: {}
+
 })
 
 information.subscribe(value => {

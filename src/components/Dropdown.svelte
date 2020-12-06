@@ -3,6 +3,7 @@
     export let options: string[] = [];
     export let hint: string = "";
     export let disabled: boolean = false;
+    export let value: string;
 
     $: dropdownProps = {
         ...$$restProps,
@@ -48,7 +49,7 @@
     }
 </style>
 
-<select type="drop" {...dropdownProps}>
+<select bind:value type="drop" {...dropdownProps}>
     <option value="" disabled selected>{hint}</option>
     {#each options as option}
         <option>{option}</option>

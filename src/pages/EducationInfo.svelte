@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { information } from "../store";
     import { navigate } from "svelte-navigator";
 
     import { months, years } from "../utils/constants";
@@ -68,29 +69,44 @@
     <div class="main-wrapper">
         <Text size="default">What education type was it huh? *</Text>
         <Options
-            onChanged={(a) => {}}
-            options={['Training', 'Formal']}
-            current={'Formal'} />
+            bind:current={$information.educationInfo.edu_type}
+            options={['Training', 'Formal']} />
         <div class="upper-middle-row">
-            <Textfield title="Institute Name" required size="default" />
-            <Textfield title="Course Name" required size="default" />
+            <Textfield
+                bind:value={$information.educationInfo.institute_name}
+                title="Institute Name"
+                required
+                size="default" />
+            <Textfield
+                bind:value={$information.educationInfo.course_name}
+                title="Course Name"
+                required
+                size="default" />
         </div>
         <div class="middle-row">
             <div class="middle-row-child-wrapper">
                 <Text size="default">When did you studying here?</Text>
                 <div class="dropdown-wrapper">
-                    <Dropdown hint={'Month'} options={months} />
-                    <Dropdown hint={'Year'} options={years} />
+                    <Dropdown
+                        bind:value={$information.educationInfo.start_studying_month}
+                        hint={'Month'}
+                        options={months} />
+                    <Dropdown
+                        bind:value={$information.educationInfo.start_studying_year}
+                        hint={'Year'}
+                        options={years} />
                 </div>
             </div>
             <div class="middle-row-child-wrapper">
                 <Text size="default">When did you bid ‘em Adios?</Text>
                 <div class="dropdown-wrapper">
                     <Dropdown
+                        bind:value={$information.educationInfo.end_studying_month}
                         hint={'Month'}
                         options={months}
                         disabled={i_still_study_here} />
                     <Dropdown
+                        bind:value={$information.educationInfo.end_studying_year}
                         hint={'Year'}
                         options={years}
                         disabled={i_still_study_here} />
@@ -101,6 +117,7 @@
             </div>
         </div>
         <Textfield
+            bind:value={$information.educationInfo.what_did_you_do_there}
             title="What did ya do there?"
             required
             expanding

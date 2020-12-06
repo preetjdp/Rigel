@@ -28,11 +28,21 @@
         flex-direction: column;
         /* align-items: center; */
         align-items: flex-start;
+
+        /* TODO Make responsive */
+        height: 100%;
+        padding: 1rem;
     }
 
     .got-work-wrapper {
         display: flex;
         flex-direction: column;
+    }
+
+    .job-type-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .upper-middle-row {
@@ -67,11 +77,13 @@
 <Page style="align-items: center;" type="start">
     <Text size="large">Give us some more info about the job</Text>
     <div class="main-wrapper">
-        <Text size="default">What job type was it huh? *</Text>
-        <Options
-            onChanged={(a) => {}}
-            options={['Professional', 'Intern', 'Freelance', 'Volunteer']}
-            current={'Professional'} />
+        <div class="job-type-wrapper">
+            <Text size="default">What job type was it huh? *</Text>
+            <Options
+                bind:current={$information.workInfo.job_type}
+                options={['Professional', 'Intern', 'Freelance', 'Volunteer']} />
+        </div>
+
         <div class="upper-middle-row">
             <Textfield
                 bind:value={$information.workInfo.role}
@@ -89,18 +101,26 @@
             <div class="middle-row-child-wrapper">
                 <Text size="default">When did you start working?</Text>
                 <div class="dropdown-wrapper">
-                    <Dropdown hint={'Month'} options={months} />
-                    <Dropdown hint={'Year'} options={years} />
+                    <Dropdown
+                        bind:value={$information.workInfo.start_working_month}
+                        hint={'Month'}
+                        options={months} />
+                    <Dropdown
+                        bind:value={$information.workInfo.start_working_year}
+                        hint={'Year'}
+                        options={years} />
                 </div>
             </div>
             <div class="middle-row-child-wrapper">
                 <Text size="default">When did you bid ‘em Adios?</Text>
                 <div class="dropdown-wrapper">
                     <Dropdown
+                        bind:value={$information.workInfo.end_working_month}
                         hint={'Month'}
                         options={months}
                         disabled={i_still_work_here} />
                     <Dropdown
+                        bind:value={$information.workInfo.end_working_year}
                         hint={'Year'}
                         options={years}
                         disabled={i_still_work_here} />

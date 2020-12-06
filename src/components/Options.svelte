@@ -1,10 +1,11 @@
 <script lang="ts">
     export let options: string[] = [];
     export let current: string;
-    export let onChanged: (current: string) => void;
+    // export let onChanged: (current: string) => void;
 
     function handleOnClick(value: string) {
-        onChanged(value);
+        current = value;
+        // onChanged(value);
     }
 </script>
 
