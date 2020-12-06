@@ -49,8 +49,8 @@ export const information = writable<RecursivePartial<AllInformation>>({
 })
 
 export const derivedInformation = derived(information, (e) => `
-### Information
-${e.personalInfo.email}
+### Resume
+${e.personalInfo.email}\n
 ${e.personalInfo.name}
 `)
 
