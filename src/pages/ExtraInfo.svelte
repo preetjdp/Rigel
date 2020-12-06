@@ -25,12 +25,12 @@
         </Text>
     </div>
     <Textfield
-        bind:value={$information.personalInfo.name}
+        bind:value={$information.extraInfo.title}
         title="Title"
         required
         size="large" />
     <Textfield
-        bind:value={$information.personalInfo.email}
+        bind:value={$information.extraInfo.description}
         title="Description"
         required
         size="large" />

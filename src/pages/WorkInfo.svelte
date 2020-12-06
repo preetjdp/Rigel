@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { information } from "../store";
     import { navigate } from "svelte-navigator";
 
     import { months, years } from "../utils/constants";
@@ -72,8 +73,13 @@
             options={['Professional', 'Intern', 'Freelance', 'Volunteer']}
             current={'Professional'} />
         <div class="upper-middle-row">
-            <Textfield title="What was your role ?" required size="default" />
             <Textfield
+                bind:value={$information.workInfo.role}
+                title="What was your role ?"
+                required
+                size="default" />
+            <Textfield
+                bind:value={$information.workInfo.org}
                 title="Name of the Organization ?"
                 required
                 size="default" />
@@ -105,6 +111,7 @@
             </div>
         </div>
         <Textfield
+            bind:value={$information.workInfo.what_did_you_do_there}
             title="What did ya do there?"
             required
             expanding

@@ -24,6 +24,7 @@
         required
         size="large" />
     <Textfield
+        bind:value={$information.personalInfo.look_your_self_into}
         title="What role do you look yourself into?"
         required
         size="large" />
