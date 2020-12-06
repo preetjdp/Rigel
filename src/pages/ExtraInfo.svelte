@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { nextPage, information } from "../store";
+    import { information } from "../store";
 
     import { navigate } from "svelte-navigator";
 
@@ -35,19 +35,8 @@
         required
         size="large" />
     <div class="bottom-row">
-        <Button
-            type="secondary"
-            onclick={() => navigate('educationInfo', {
-                    replace: true,
-                    state: {},
-                })}
-            disabled>
-            Back
-        </Button>
-        <Button
-            onclick={() => navigate('viewer', { // replace: true,
-                    state: {} })}
-            type="primary">
+        <Button type="secondary" onclick={() => navigate(-1)}>Back</Button>
+        <Button onclick={() => navigate('viewer')} type="primary">
             Proceed
         </Button>
     </div>
