@@ -64,3 +64,9 @@ button:disabled {
 /* button:focus {
 	border-color: #666;
 } */
+
+.parent {
+	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
