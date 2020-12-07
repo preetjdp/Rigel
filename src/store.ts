@@ -56,10 +56,19 @@ export const derivedInformation = derived(information, (e) => `
 ${e.personalInfo.email}
 
 ### Work Experience
+<b>${e.workInfo.job_type} </b> | ${e.workInfo.org}
+
+${e.workInfo.what_did_you_do_there}
 
 ### Education
+<b>${e.educationInfo.edu_type} </b> | ${e.educationInfo.institute_name}
+
+${e.educationInfo.what_did_you_do_there}
 
 ### Extras
+<b>${e.extraInfo.title}</b>
+
+${e.extraInfo.description}
 `)
 
 information.subscribe(value => {
