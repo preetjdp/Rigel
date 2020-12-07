@@ -50,10 +50,10 @@
     <Textfield
         title="What was the name of that super fortunate organization?" required size="large"/>
 
-    <Options
+    <!-- <Options
         current={selectedValue}
         options={jobTypes}
-        onChanged={handleOnChanged} />
+        onChanged={handleOnChanged} /> -->
     <div class="bottom-row">
         <Button type="secondary" disabled>Back</Button>
         <Dropdown hint="Month" options={['Cheese', 'Butter']} />
