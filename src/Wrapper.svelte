@@ -14,7 +14,7 @@
     import Share from "./pages/Share.svelte";
 </script>
 
-{#if $location.pathname !== '/viewer'}
+{#if $location.pathname !== '/viewer' || $location.pathname !== '/share'}
     <Navbar />
 {/if}
 <Route path="" component={PersonalInfo} />
