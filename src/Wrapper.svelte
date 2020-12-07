@@ -11,6 +11,7 @@
     import EducationInfo from "./pages/EducationInfo.svelte";
     import ExtraInfo from "./pages/ExtraInfo.svelte";
     import Viewer from "./pages/Viewer.svelte";
+    import Share from "./pages/Share.svelte";
 </script>
 
 {#if $location.pathname !== '/viewer'}
@@ -20,6 +21,10 @@
 <Route path="personalInfo" meta={{ name: 'About' }} component={PersonalInfo} />
 <Route path="gotWork" component={GotWork} />
 <Route path="workInfo" meta={{ name: 'Work' }} component={WorkInfo} />
-<Route path="educationInfo" meta={{ name: 'Education' }} component={EducationInfo} />
+<Route
+    path="educationInfo"
+    meta={{ name: 'Education' }}
+    component={EducationInfo} />
 <Route path="extraInfo" meta={{ name: 'Extras' }} component={ExtraInfo} />
 <Route path="viewer" meta={{ name: 'Work' }} component={Viewer} />
+<Route path="share/:id" meta={{ name: 'Work' }} component={Share} />
