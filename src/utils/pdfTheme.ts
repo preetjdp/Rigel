@@ -75,9 +75,9 @@ export const RegelTheme = {
         },
         heading: {
             // fontFamily: Fonts.serif,
-            fontSize: 36,
-            // fontSize: (level) =>
-            //     [36, 32, 24, 18, 18, 18][Math.min(5, level - 1)],
+            // fontSize: 36,
+            fontSize: (level) =>
+                [36, 32, 24, 18, 18, 18][Math.min(5, level - 1)],
             bold: (level) =>
                 [true, true, true, true, false, false][
                 Math.min(5, level - 1)
