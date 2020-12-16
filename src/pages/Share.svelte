@@ -1,10 +1,15 @@
 <script lang="ts">
     import PdfViewer from "svelte-pdf";
 
-    import { derivedInformation } from "../store";
+    import { useParams } from "svelte-navigator";
+
+    const params = useParams();
+
+    const resume_id = $params.id;
+
     import { navigate } from "svelte-navigator";
     import { RegelTheme } from "../utils/pdfTheme";
-    import { uploadResume, uuidv4 } from "../utils/deta";
+    import { getResume, uuidv4 } from "../utils/deta";
 
     import Page from "../components/Page.svelte";
     import Button from "../components/Button.svelte";
@@ -15,14 +20,14 @@
     let pdfBlob: Blob;
 
     const share = async () => {
-        const id = uuidv4();
-        await uploadResume(id, $derivedInformation);
-        await navigator.clipboard.writeText(location.origin + "/share/" + id);
+        await navigator.clipboard.writeText(location.pathname);
         alert("Link copied to clipboard");
     };
 
     const generatePdf = async () => {
-        const result = await MarkdownToPdf.convertString($derivedInformation, {
+        console.log("IM HERE");
+        const resume_content = await getResume(resume_id);
+        const result = await MarkdownToPdf.convertString(resume_content, {
             /**
              * The options are marked options
              *
@@ -72,11 +77,21 @@
     }
 
     .viewer {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        flex-direction: column;
         height: 100%;
         max-width: 600px;
         width: 80%;
         filter: drop-shadow(0 4px 18px #00000008);
         background-color: whitesmoke;
+    }
+
+    .viewer > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     @media (max-width: 640px) {

@@ -1,4 +1,4 @@
-import { writable } from "svelte/store"
+import { derived, writable } from "svelte/store"
 
 type RecursivePartial<T> = {
     [P in keyof T]?: RecursivePartial<T[P]>;
@@ -47,6 +47,29 @@ export const information = writable<RecursivePartial<AllInformation>>({
     extraInfo: {},
 
 })
+
+export const derivedInformation = derived(information, (e) => `
+## Hey! This is ${e.personalInfo.name}
+
+#### I am a ${e.personalInfo.look_your_self_into}
+
+${e.personalInfo.email}
+
+### Work Experience
+${e.workInfo.job_type} | ${e.workInfo.org}
+
+${e.workInfo.what_did_you_do_there}
+
+### Education
+${e.educationInfo.edu_type} | ${e.educationInfo.institute_name}
+
+${e.educationInfo.what_did_you_do_there}
+
+### Extras
+${e.extraInfo.title}
+
+${e.extraInfo.description}
+`)
 
 information.subscribe(value => {
     console.log("UPADTE TO INFORMATION", value);
