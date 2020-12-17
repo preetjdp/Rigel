@@ -17,7 +17,7 @@
 		flex-direction: column;
 
 		/* Disables all overflows, might lead to problems */
-		overflow: hidden;
+		overflow-x: hidden;
 		/* grid-template-columns: 1fr 0.8fr;
 		grid-template-rows: 1fr;
 		grid-column-gap: 0px;
@@ -27,6 +27,26 @@
 		/* More OLD CSS */
 		/* padding: 1em; */
 		/* max-width: 240px; */
+	}
+
+	main::-webkit-scrollbar {
+		width: 12px;
+	}
+
+	main::-webkit-scrollbar-track {
+		-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+		border-radius: 10px;
+	}
+
+	main::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+	}
+
+	@media (max-width: 640px) {
+		main::-webkit-scrollbar {
+			display: none;
+		}
 	}
 
 	@media (min-width: 640px) {

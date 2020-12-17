@@ -67,7 +67,7 @@
     .options-wrapper {
         position: absolute;
         bottom: 0;
-        right: 0;
+        right: 1rem;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;

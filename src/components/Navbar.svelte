@@ -44,6 +44,21 @@
         justify-content: center;
         align-items: center;
         flex-shrink: 0;
+
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .navbar::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+    }
+
+    @media (max-width: 640px) {
+        .navbar {
+            width: Calc(100% - 1rem) !important;
+            overflow: scroll;
+            justify-content: stretch;
+        }
     }
 </style>
 

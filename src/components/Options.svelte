@@ -52,6 +52,12 @@
         color: #fbefde;
         filter: drop-shadow(0 4px 12px #00000008);
     }
+
+    @media (max-width: 640px) {
+        .options {
+            flex-flow: wrap;
+        }
+    }
 </style>
 
 <div class="options">

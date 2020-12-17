@@ -72,6 +72,28 @@
         flex-direction: row;
         gap: 1rem;
     }
+
+    @media (max-width: 640px) {
+        .main-wrapper {
+            width: calc(100% - 1rem);
+            align-items: stretch;
+            gap: 1rem;
+        }
+
+        .job-type-wrapper {
+            margin: 0 1rem;
+        }
+
+        .upper-middle-row {
+            flex-direction: column;
+        }
+
+        .middle-row {
+            flex-direction: column;
+            margin: 0 1rem;
+            gap: 1rem;
+        }
+    }
 </style>
 
 <Page style="align-items: center;" type="start">
@@ -89,12 +111,12 @@
                 bind:value={$information.workInfo.role}
                 title="What was your role ?"
                 required
-                size="default" />
+                size="large" />
             <Textfield
                 bind:value={$information.workInfo.org}
                 title="Name of the Organization ?"
                 required
-                size="default" />
+                size="large" />
         </div>
 
         <div class="middle-row">

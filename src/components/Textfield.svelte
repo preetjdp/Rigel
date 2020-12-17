@@ -39,11 +39,13 @@
     }
 
     .text-field--default {
-        width: 300px;
+        width: 100%;
+        max-width: 300px;
     }
 
     .text-field--large {
-        width: 660px;
+        width: 100%;
+        max-width: 660px;
     }
 
     .text-field--active {
@@ -75,6 +77,14 @@
     textarea {
         max-height: 80px;
     }
+
+    @media (max-width: 640px) {
+        .text-field--large {
+            width: auto;
+            align-self: stretch;
+            margin: 0 1rem;
+        }
+    }
 </style>
 
 <div {...textfieldProps}>
@@ -84,13 +94,13 @@
     </Text>
     {#if !expanding}
         <input
-            bind:value={value}
+            bind:value
             class="text-field-input"
             placeholder={hint}
             type="text" />
     {:else}
         <textarea
-            bind:value={value}
+            bind:value
             class="text-field-input"
             placeholder={hint}
             type="text"
