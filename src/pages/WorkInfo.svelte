@@ -57,7 +57,8 @@
     .middle-row {
         display: flex;
         flex-direction: row;
-        gap: 2rem;
+        /* gap: 2rem; */
+        gap: 4rem;
         margin-top: 0.2rem;
     }
 
