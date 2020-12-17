@@ -126,6 +126,6 @@
         <Button class="back-button" onclick={() => navigate(-1)}>Back</Button>
         <Button onclick={download} type="secondary">Download</Button>
         <Button onclick={share} type="secondary">Share</Button>
-        <Button onclick={() => navigate('/')} type="secondary">Edit</Button>
+        <!-- <Button onclick={() => navigate('/')} type="secondary">Edit</Button> -->
     </div>
 </Page>
