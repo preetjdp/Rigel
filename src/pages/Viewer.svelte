@@ -81,6 +81,7 @@
 
     @media (max-width: 640px) {
         .options-wrapper {
+            width: 100%;
             flex-direction: row;
             gap: 0rem;
             padding: 0rem;
